@@ -35,3 +35,16 @@ if st.button("Calcular similitud"):
     else:
         st.error("Poco relacionados")
       
+print("\nSimilitudes:")
+for i in range(len(words)):
+    for j in range(i+1, len(words)):
+        sim = cosine_similarity([embeddings[i]], [embeddings[j]])[0][0]
+        print(f"{words[i]} vs {words[j]} = {sim:.3f}")
+
+# 7. Visualización simple
+for i, word in enumerate(words):
+    plt.plot(embeddings[i], label=word)
+
+plt.legend()
+plt.title("Embeddings como señales numéricas")
+plt.show()
