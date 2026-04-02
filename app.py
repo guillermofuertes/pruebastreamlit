@@ -1,5 +1,5 @@
-pip install streamlit sentence-transformers scikit-learn
 import streamlit as st
+pip install streamlit sentence-transformers scikit-learn
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
